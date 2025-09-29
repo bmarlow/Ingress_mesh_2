@@ -1,0 +1,15 @@
+apiVersion: v1
+items:
+- apiVersion: metallb.io/v1beta2
+  kind: BGPPeer
+  metadata:
+    name: lab-router
+    namespace: metallb-system
+  spec:
+    disableMP: false
+    myASN: 65002
+    peerASN: 65000
+    peerAddress: 10.0.102.1
+    peerPort: 179
+    routerID: 10.0.102.201
+

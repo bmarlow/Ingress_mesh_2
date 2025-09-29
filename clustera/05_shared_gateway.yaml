@@ -1,0 +1,18 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: anycast-shared-gateway
+  namespace: anycast-shared-gateway
+spec:
+  gatewayClassName: openshift-default
+  addresses:
+    - type: IPAddress
+      value: 10.88.0.5
+  listeners:
+  - name: http
+    port: 80
+    protocol: HTTP
+    hostname: apps.anycast.goguybrush.com
+    allowedRoutes:
+      namespaces:
+        from: All

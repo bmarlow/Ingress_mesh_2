@@ -1,0 +1,14 @@
+apiVersion: v1
+items:
+- apiVersion: metallb.io/v1beta1
+  kind: IPAddressPool
+  metadata:
+    name: anycast-address-pool
+    namespace: metallb-system
+  spec:
+    addresses:
+    - 10.88.0.0/24
+    autoAssign: true
+    avoidBuggyIPs: false
+kind: List
+
